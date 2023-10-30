@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+
+input {
+  padding: 0;
+  margin-left: 5px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+body {
+    background: #f2f6ff;
+    font-size: 20px;
+}
+
+.new-task input[type=text] {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    background-color: white;
+    border: 2px solid rgba(247, 220, 220, 0.9);
+    border-radius: 10px;
+}
+
+
+
+label {
+    margin-left: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 0 15px;
+}
+
+h2 {
+    margin-top: 20px;
+    align-self: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li label {
+    text-align: start;
+    overflow: hidden;
+}
+
+button {
+    text-decoration: none;
+    background: transparent;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 0 0;
+}
+
+.new-task {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+
+.add {
+    margin-left: 15px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.uncompleted-task {
+    display: flex;
+    flex-direction: column;
+}
+
+.uncompleted-task_list input[type=text], .completed-task_list input[type=text] {
+    width: 200px;
+    height: 22px;
+    opacity: 0.5;
+}
+
+label {
+    text-align: start;
+    width: 200px;
+}
+
+.tasks {
+    align-self: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.delete img, .edit img{
+    pointer-events: none;
+}
+
+ul li input[type=text] {
+    display: none;
+} 
+
+ul li.editMode input[type=text] {
+    display: inline;
+}
+
+ul li.editMode label {
+    display: none;
+}

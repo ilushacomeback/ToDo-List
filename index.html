@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Сегодня</h1>
+      </header>
+      <main>
+        <h2>Что будем делать? :)</h2>
+        <div class="new-task">
+          <input type="text" />
+          <button class="add">
+            <img src="./icons/add.png" alt="add task" />
+          </button>
+        </div>
+        <div class="uncompleted-task">
+          <h2 class="tasks">Мои задачи</h2>
+          <ul class="uncompleted-task_list" id="uncompleted-task_list">
+            <li>
+              <input type="checkbox" />
+              <label>Lorem, ipsum dolor.</label>
+              <input type="text" />
+              <div class="buttons">
+                <button class="edit">
+                  <img src="./icons/edit.png" alt="edit task" />
+                </button>
+                <button class="delete">
+                  <img src="./icons/delete.png" alt="delete task" />
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="completed-task">
+          <h2>Завершено</h2>
+          <ul class="completed-task_list">
+            <li>
+              <input type="checkbox" checked />
+              <label>Lorem ipsum dolor sit amet.</label>
+              <input type="text">
+              <div class="buttons">
+              <button class="edit">
+                <img src="./icons/edit.png" alt="edit task" />
+              </button>
+              <button class="delete">
+                <img src="./icons/delete.png" alt="delete task" />
+              </button>
+            </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
