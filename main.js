@@ -1,4 +1,3 @@
-
 const addTaskBtn = document.querySelector(".add");
 const uncompletedTaskList = document.querySelector(".uncompleted-task_list");
 const completedTaskList = document.querySelector(".completed-task_list");
@@ -22,7 +21,7 @@ function createNewTask(taskValue) {
   imgDelete.src = "./icons/delete.png";
   imgDelete.type = "image";
 
-  deleteButton.className = "delete new";
+  deleteButton.className = "delete";
   editButton.className = "edit";
   buttons.className = "buttons";
 
@@ -73,30 +72,12 @@ function checkBox() {
   if (event.target.type === "checkbox" && event.target.checked) {
     const li = event.target.closest("li");
     completedTaskList.appendChild(li);
-    
-  } if(event.target.type === 'checkbox' && !event.target.checked) {
-    const li = event.target.closest('li')
-    uncompletedTaskList.appendChild(li)
+  }
+  if (event.target.type === "checkbox" && !event.target.checked) {
+    const li = event.target.closest("li");
+    uncompletedTaskList.appendChild(li);
   }
 }
-
-// function editTask() {
-//   if (event.target.className === "edit") {
-//     const li = event.target.closest("li");
-//     const input = li.querySelector("input[type=text]");
-//     const label = li.querySelector("label");
-//     li.classList.toggle('editMode')
-//     const labelTrue = label.classList.contains("editMode")
-//   }
-// }
-
-// function editTask () {
-//     if (event.target.className === 'edit') {
-//         const li = event.target.closest('li')
-//         const label = li.querySelector('label')
-//         label.setAttribute('contentEditable', true)
-//     }
-// }
 
 addTaskBtn.addEventListener("click", addTask);
 uncompletedTaskList.addEventListener("click", deleteTask);
@@ -114,4 +95,4 @@ completedTaskList.addEventListener("click", () => {
 });
 
 uncompletedTaskList.addEventListener("click", checkBox);
-completedTaskList.addEventListener('click', checkBox)
+completedTaskList.addEventListener("click", checkBox);

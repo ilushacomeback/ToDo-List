@@ -1,15 +1,13 @@
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
-
 
 input {
   padding: 0;
-  margin-left: 5px;
+  margin-left: 8px;
   outline: none;
   border: none;
   border-radius: 0;
@@ -21,100 +19,116 @@ input {
 }
 
 body {
-    background: #f2f6ff;
-    font-size: 20px;
+  background: #f2f6ff;
+  font-size: 20px;
 }
 
-.new-task input[type=text] {
-    width: 200px;
-    height: 30px;
-    padding-left: 10px;
-    background-color: white;
-    border: 2px solid rgba(247, 220, 220, 0.9);
-    border-radius: 10px;
+.new-task input[type="text"] {
+  width: 200px;
+  height: 30px;
+  padding-left: 10px;
+  background-color: white;
+  border: 2px solid rgba(247, 220, 220, 0.9);
+  border-radius: 10px;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    margin: 0 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 15px 0 15px;
 }
 
 h2 {
-    margin-top: 20px;
-    align-self: center;
+  margin-top: 20px;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+li {
+    align-items: center;
 }
 
 li label {
-    overflow: hidden;
-    margin-left: 6px;
-    text-align: start;
-    width: 200px;
+  overflow: hidden;
+  margin-left: 8px;
+  text-align: start;
+  width: 200px;
+  
+}
+
+.buttons {
+  font-size: 0;
 }
 
 button {
-    text-decoration: none;
-    background: transparent;
-    margin-left: 10px;
-}
-
-.new {
-    margin-left: 15px;
+  text-decoration: none;
+  background: transparent;
+  margin-left: 10px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 0 0;
 }
 
 .new-task {
-    display: flex;
-    align-items: center;
-    margin: 20px 0 0 0;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
 }
 
 .add {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
-li{
-    display: flex;
-    margin-top: 10px;
+.delete {
+  margin-left: 15px;
+}
+
+li {
+  display: flex;
+  margin-top: 10px;
 }
 
 .uncompleted-task {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.uncompleted-task_list input[type=text], .completed-task_list input[type=text] {
-    width: 200px;
-    height: 22px;
-    opacity: 0.5;
+.uncompleted-task_list input[type="text"],
+.completed-task_list input[type="text"] {
+  width: 200px;
+  height: 23px;
+  opacity: 0.5;
+}
+
+.completed-task {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .tasks {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
-.delete img, .edit img{
-    pointer-events: none;
+.delete img,
+.edit img {
+  pointer-events: none;
 }
 
-ul li input[type=text] {
-    display: none;
-} 
+ul li input[type="text"] {
+  display: none;
+}
 
-ul li.editMode input[type=text] {
-    display: inline;
+ul li.editMode input[type="text"] {
+  display: inline;
 }
 
 ul li.editMode label {
-    display: none;
+  display: none;
 }
