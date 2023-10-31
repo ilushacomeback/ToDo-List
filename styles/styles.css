@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -109,19 +110,6 @@ li{
 .tasks {
     align-self: flex-start;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .delete img, .edit img{
     pointer-events: none;
