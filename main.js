@@ -23,7 +23,7 @@ function createNewTask(taskValue) {
   imgDelete.type = "image";
 
   deleteButton.className = "delete new";
-  editButton.className = "edit new";
+  editButton.className = "edit";
   buttons.className = "buttons";
 
   label.innerText = taskValue;
