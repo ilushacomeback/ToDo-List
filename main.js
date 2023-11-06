@@ -13,6 +13,7 @@ function createNewTask(taskValue) {
   const imgEdit = document.createElement("img");
   const deleteButton = document.createElement("button");
   const imgDelete = document.createElement("img");
+  const spanDate = document.createElement("span");
 
   checkBox.type = "checkBox";
   input.type = "text";
@@ -24,8 +25,11 @@ function createNewTask(taskValue) {
   deleteButton.className = "delete";
   editButton.className = "edit";
   buttons.className = "buttons";
+  spanDate.className = "date";
 
+   
   label.innerText = taskValue;
+  spanDate.innerHTML = new Date().toLocaleString()
 
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
@@ -35,6 +39,7 @@ function createNewTask(taskValue) {
   buttons.appendChild(deleteButton);
   editButton.appendChild(imgEdit);
   deleteButton.appendChild(imgDelete);
+  listItem.appendChild(spanDate);
 
   return listItem;
 }
@@ -71,10 +76,13 @@ function editTask() {
 function checkBox() {
   if (event.target.type === "checkbox" && event.target.checked) {
     const li = event.target.closest("li");
+    const span = li.querySelector('span')
+    span.innerHTML =  new Date().toLocaleString()
     completedTaskList.appendChild(li);
-  }
-  if (event.target.type === "checkbox" && !event.target.checked) {
+  } else if (event.target.type === "checkbox" && !event.target.checked) {
     const li = event.target.closest("li");
+    const span = li.querySelector('span')
+    span.innerHTML =  new Date().toLocaleString()
     uncompletedTaskList.appendChild(li);
   }
 }

@@ -34,12 +34,14 @@ body {
 
 main {
   display: flex;
+  align-items: center;
   flex-direction: column;
   margin: 0 15px 0 15px;
 }
 
 h2 {
   margin-top: 20px;
+  align-self: center;
 }
 
 ul {
@@ -47,19 +49,19 @@ ul {
 }
 
 li {
-    align-items: center;
+  align-items: center;
 }
 
 li label {
   overflow: hidden;
   margin-left: 8px;
   text-align: start;
-  width: 200px;
-  
+  min-width: 200px;
 }
 
 .buttons {
   font-size: 0;
+  display: flex;
 }
 
 button {
@@ -113,7 +115,7 @@ li {
 }
 
 .tasks {
-  align-self: flex-start;
+  align-self: center;
 }
 
 .delete img,
@@ -131,4 +133,9 @@ ul li.editMode input[type="text"] {
 
 ul li.editMode label {
   display: none;
+}
+
+.date {
+  font-size: 10px;
+  margin-left: 10px;
 }
