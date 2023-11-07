@@ -49,6 +49,9 @@ ul {
 }
 
 li {
+  display: flex;
+  margin-top: 10px;
+  max-width: 336px;
   align-items: center;
 }
 
@@ -91,11 +94,6 @@ button {
   margin-left: 15px;
 }
 
-li {
-  display: flex;
-  margin-top: 10px;
-}
-
 .uncompleted-task {
   display: flex;
   flex-direction: column;
@@ -136,6 +134,7 @@ ul li.editMode label {
 }
 
 .date {
-  font-size: 10px;
+  font-size: 14px;
   margin-left: 10px;
+  margin-right: 10px;
 }

@@ -27,9 +27,8 @@ function createNewTask(taskValue) {
   buttons.className = "buttons";
   spanDate.className = "date";
 
-   
   label.innerText = taskValue;
-  spanDate.innerHTML = new Date().toLocaleString()
+  spanDate.innerHTML = createDate();
 
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
@@ -63,10 +62,12 @@ function editTask() {
   const li = event.target.closest("li");
   const input = li.querySelector("input[type=text]");
   const label = li.querySelector("label");
+  const span = li.querySelector("span");
   const labelTrue = li.classList.contains("editMode");
 
   if (labelTrue) {
     label.innerHTML = input.value;
+    span.innerHTML = createDate();
   } else {
     input.value = label.innerHTML;
   }
@@ -76,16 +77,35 @@ function editTask() {
 function checkBox() {
   if (event.target.type === "checkbox" && event.target.checked) {
     const li = event.target.closest("li");
-    const span = li.querySelector('span')
-    span.innerHTML =  new Date().toLocaleString()
+    const span = li.querySelector("span");
+    span.innerHTML = createDate();
     completedTaskList.appendChild(li);
   } else if (event.target.type === "checkbox" && !event.target.checked) {
     const li = event.target.closest("li");
-    const span = li.querySelector('span')
-    span.innerHTML =  new Date().toLocaleString()
+    const span = li.querySelector("span");
+    span.innerHTML = createDate();
     uncompletedTaskList.appendChild(li);
   }
 }
+
+function createDate() {
+  const date = new Date();
+  const month = date.getMonth();
+  const day = date.getDate();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const arrDate = [month + 1, day, hours, minutes];
+  let arrTwo = [];
+  for (let i = 0; i < arrDate.length; i++) {
+    if (arrDate[i] < 10) {
+      arrTwo.push(`0${arrDate[i]}`);
+    } else {
+      arrTwo.push(arrDate[i]);
+    }
+  }
+  return `${arrTwo[0]}.${arrTwo[1]}\n${arrTwo[2]}:${arrTwo[3]}`;
+}
+
 
 addTaskBtn.addEventListener("click", addTask);
 uncompletedTaskList.addEventListener("click", deleteTask);
