@@ -56,8 +56,8 @@ function deleteTask() {
   if (event.target.className === "delete") {
     const li = event.target.closest("li");
     li.remove();
-    uncompletedToggle()
-    completedToggle()
+    uncompletedToggle();
+    completedToggle();
   }
 }
 
@@ -84,13 +84,13 @@ function checkBox() {
     span.innerHTML = createDate();
     completedTaskList.appendChild(li);
     completedToggle();
-    uncompletedToggle()
+    uncompletedToggle();
   } else if (event.target.type === "checkbox" && !event.target.checked) {
     const li = event.target.closest("li");
     const span = li.querySelector("span");
     span.innerHTML = createDate();
     uncompletedTaskList.appendChild(li);
-    completedToggle()
+    completedToggle();
     uncompletedToggle();
   }
 }

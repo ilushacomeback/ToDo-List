@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,6 +22,8 @@ input {
 
 body {
   background: #f2f6ff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
 .new-task input[type="text"] {
@@ -51,6 +55,13 @@ li {
   display: flex;
   margin-top: 10px;
   align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 9px;
+}
+
+li:hover {
+  border-color: rgb(105, 105, 105);
+  transition: 0.3s;
 }
 
 li label {
@@ -58,6 +69,11 @@ li label {
   text-align: start;
   min-width: 128px;
   max-width: 128px;
+}
+
+li label:hover {
+  color: rgb(105, 105, 105);
+  transition: 0.3s;
 }
 
 .buttons {
@@ -111,8 +127,12 @@ button {
   margin-bottom: 50px;
 }
 
-.tasks {
-  align-self: center;
+button:hover {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
 }
 
 .delete img,
@@ -141,17 +161,16 @@ ul li.editMode label {
 
 .empty-list {
   font-size: 18px;
-  width: 200px;
+  width: 255px;
   height: 50px;
   margin-top: 10px;
-  padding-top: 14px;
-  border: 1px solid #eaf0fd;
+  padding-top: 11px;
+  border: 1px solid #faff9a;
   border-radius: 8px;
   background: white;
   text-align: center;
 }
 
-.empty-list.hidden  {
+.empty-list.hidden {
   display: none;
 }
-
