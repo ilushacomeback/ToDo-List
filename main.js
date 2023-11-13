@@ -58,6 +58,7 @@ function deleteTask() {
     li.remove();
     uncompletedToggle();
     completedToggle();
+    spanToggle()
   }
 }
 
@@ -85,6 +86,7 @@ function checkBox() {
     completedTaskList.appendChild(li);
     completedToggle();
     uncompletedToggle();
+    spanToggle()
   } else if (event.target.type === "checkbox" && !event.target.checked) {
     const li = event.target.closest("li");
     const span = li.querySelector("span");
@@ -116,6 +118,20 @@ const completedToggle = () => {
     emptyList.classList.remove("hidden");
   }
 };
+
+const spanToggle = () => {
+  const uncompletedTask = document.querySelector(".uncompleted-task");
+  const unLiTasks = uncompletedTaskList.getElementsByTagName("li");
+  const completedTask = document.querySelector(".completed-task");
+  const liTasks = completedTask.getElementsByTagName("li");
+  const emptyList = uncompletedTask.querySelector(".empty-list");
+
+  if ((unLiTasks.length <= 0) && (liTasks.length > 0)) {
+    emptyList.innerHTML = 'Вы всё выполнили'
+  } else {
+    emptyList.innerHTML = 'Дел на сегодня нет'
+  }
+} 
 
 function createDate() {
   const date = new Date();
