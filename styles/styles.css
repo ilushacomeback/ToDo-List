@@ -101,7 +101,7 @@ button {
 
 .uncompleted-task_list input[type="text"],
 .completed-task_list input[type="text"] {
-  width: 150px;
+  width: 128px;
   opacity: 0.5;
 }
 
