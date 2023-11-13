@@ -106,7 +106,6 @@ function createDate() {
   return `${arrTwo[0]}.${arrTwo[1]}\n${arrTwo[2]}:${arrTwo[3]}`;
 }
 
-
 addTaskBtn.addEventListener("click", addTask);
 uncompletedTaskList.addEventListener("click", deleteTask);
 completedTaskList.addEventListener("click", deleteTask);
