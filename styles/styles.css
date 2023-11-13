@@ -87,6 +87,12 @@ button {
   margin-left: 10px;
 }
 
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -124,11 +130,8 @@ button {
 .completed-task {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 50px;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 input[type="checkbox"] {
