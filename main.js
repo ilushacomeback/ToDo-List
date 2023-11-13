@@ -48,6 +48,7 @@ function addTask() {
     const listItem = createNewTask(taskInput.value);
     uncompletedTaskList.appendChild(listItem);
     taskInput.value = "";
+    uncompletedToggle();
   }
 }
 
@@ -55,6 +56,8 @@ function deleteTask() {
   if (event.target.className === "delete") {
     const li = event.target.closest("li");
     li.remove();
+    uncompletedToggle()
+    completedToggle()
   }
 }
 
@@ -80,13 +83,39 @@ function checkBox() {
     const span = li.querySelector("span");
     span.innerHTML = createDate();
     completedTaskList.appendChild(li);
+    completedToggle();
+    uncompletedToggle()
   } else if (event.target.type === "checkbox" && !event.target.checked) {
     const li = event.target.closest("li");
     const span = li.querySelector("span");
     span.innerHTML = createDate();
     uncompletedTaskList.appendChild(li);
+    completedToggle()
+    uncompletedToggle();
   }
 }
+
+const uncompletedToggle = () => {
+  const liTasks = uncompletedTaskList.getElementsByTagName("li");
+  const uncompletedTask = document.querySelector(".uncompleted-task");
+  const emptyList = uncompletedTask.querySelector(".empty-list");
+  if (liTasks.length > 0) {
+    emptyList.classList.add("hidden");
+  } else if (liTasks.length <= 0) {
+    emptyList.classList.remove("hidden");
+  }
+};
+
+const completedToggle = () => {
+  const liTasks = completedTaskList.getElementsByTagName("li");
+  const completedTask = document.querySelector(".completed-task");
+  const emptyList = completedTask.querySelector(".empty-list");
+  if (liTasks.length > 0) {
+    emptyList.classList.add("hidden");
+  } else if (liTasks.length <= 0) {
+    emptyList.classList.remove("hidden");
+  }
+};
 
 function createDate() {
   const date = new Date();
@@ -95,15 +124,15 @@ function createDate() {
   const hours = date.getHours();
   const minutes = date.getMinutes();
   const arrDate = [month + 1, day, hours, minutes];
-  let arrTwo = [];
+  const arrCreateDate = [];
   for (let i = 0; i < arrDate.length; i++) {
     if (arrDate[i] < 10) {
-      arrTwo.push(`0${arrDate[i]}`);
+      arrCreateDate.push(`0${arrDate[i]}`);
     } else {
-      arrTwo.push(arrDate[i]);
+      arrCreateDate.push(arrDate[i]);
     }
   }
-  return `${arrTwo[0]}.${arrTwo[1]}\n${arrTwo[2]}:${arrTwo[3]}`;
+  return `${arrCreateDate[0]}.${arrCreateDate[1]}\n${arrCreateDate[2]}:${arrCreateDate[3]}`;
 }
 
 addTaskBtn.addEventListener("click", addTask);

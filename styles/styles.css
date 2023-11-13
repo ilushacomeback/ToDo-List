@@ -136,3 +136,14 @@ ul li.editMode label {
   margin-right: 10px;
   white-space: pre-line;
 }
+
+.empty-list {
+  display: block;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.empty-list.hidden  {
+  display: none;
+}
+
