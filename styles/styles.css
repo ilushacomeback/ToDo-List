@@ -202,16 +202,15 @@ ul li.editMode label {
   position: absolute;
   width: 40px;
   height: 40px;
-  border: 2px solid rgb(240, 150, 252);
-  box-shadow: -1px 0px 20px 29px rgba(231, 100, 248, 0.2);
+  color: rgb(63, 0, 211);
+  border: 2px solid rgb(237, 237, 238);
+  box-shadow: -1px 0px 20px 29px rgba(242, 237, 243, 0.2);
   border-radius: 50%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 50%,
-    rgba(255, 255, 255, 1) 50%,
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5) 0%,
     rgba(255, 255, 255, 1) 100%
   );
-  right: -105px;
-  top: -4px;
+  right: -77px;
+  top: 0;
 }

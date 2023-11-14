@@ -203,5 +203,4 @@ completedTaskList.addEventListener("click", () => {
 
 uncompletedTaskList.addEventListener("click", checkBox);
 completedTaskList.addEventListener("click", checkBox);
-
 darkBtn.addEventListener("click", getDarkTopic);
