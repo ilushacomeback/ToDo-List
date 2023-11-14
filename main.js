@@ -2,6 +2,7 @@ const addTaskBtn = document.querySelector(".add");
 const uncompletedTaskList = document.querySelector(".uncompleted-task_list");
 const completedTaskList = document.querySelector(".completed-task_list");
 const taskInput = document.querySelector("input[type=text]");
+const darkBtn = document.querySelector(".dark-btn");
 
 function createNewTask(taskValue) {
   const listItem = document.createElement("li");
@@ -48,7 +49,9 @@ function addTask() {
     const listItem = createNewTask(taskInput.value);
     uncompletedTaskList.appendChild(listItem);
     taskInput.value = "";
+    taskInput.focus();
     uncompletedToggle();
+    checkDarkView();
   }
 }
 
@@ -151,6 +154,38 @@ function createDate() {
   return `${arrCreateDate[0]}.${arrCreateDate[1]}\n${arrCreateDate[2]}:${arrCreateDate[3]}`;
 }
 
+const getDarkTopic = () => {
+  const body = document.querySelector("body");
+  const h1 = document.querySelector("h1");
+  const h2 = document.querySelectorAll("h2");
+  body.classList.toggle("night");
+  h1.classList.toggle("white-text");
+  for (let i = 0; i < h2.length; i++) {
+    h2[i].classList.toggle("white-text");
+  }
+  checkDarkView();
+};
+
+const checkDarkView = () => {
+  const body = document.querySelector("body");
+  const li = document.getElementsByTagName("li");
+  const img = document.getElementsByTagName("img");
+  for (let i = 0; i < li.length; i++) {
+    if (body.classList.contains("night")) {
+      li[i].classList.add("white-text");
+    } else {
+      li[i].classList.remove("white-text");
+    }
+  }
+  for (let i = 0; i < img.length; i++) {
+    if (body.classList.contains("night")) {
+      img[i].classList.add("invert");
+    } else {
+      img[i].classList.remove("invert");
+    }
+  }
+};
+
 addTaskBtn.addEventListener("click", addTask);
 uncompletedTaskList.addEventListener("click", deleteTask);
 completedTaskList.addEventListener("click", deleteTask);
@@ -168,3 +203,5 @@ completedTaskList.addEventListener("click", () => {
 
 uncompletedTaskList.addEventListener("click", checkBox);
 completedTaskList.addEventListener("click", checkBox);
+
+darkBtn.addEventListener("click", getDarkTopic);

@@ -26,6 +26,18 @@ body {
   font-size: 14px;
 }
 
+body.night {
+  background: rgb(19, 17, 17);
+}
+
+.white-text {
+  color: white;
+}
+
+.black-text {
+  color: black;
+}
+
 .new-task input[type="text"] {
   width: 200px;
   height: 30px;
@@ -40,6 +52,10 @@ main {
   align-items: center;
   flex-direction: column;
   margin: 0 15px 0 15px;
+}
+
+header {
+  position: relative;
 }
 
 h2 {
@@ -143,6 +159,10 @@ input[type="checkbox"] {
   pointer-events: none;
 }
 
+img.invert {
+  filter: invert(100%);
+}
+
 ul li input[type="text"] {
   display: none;
 }
@@ -176,4 +196,22 @@ ul li.editMode label {
 
 .empty-list.hidden {
   display: none;
+}
+
+.dark-btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(240, 150, 252);
+  box-shadow: -1px 0px 20px 29px rgba(231, 100, 248, 0.2);
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  right: -105px;
+  top: -4px;
 }
