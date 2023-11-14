@@ -187,8 +187,14 @@ const checkDarkView = () => {
 };
 
 addTaskBtn.addEventListener("click", addTask);
+
+taskInput.addEventListener("keyup", (event) => {
+  if (event.code === "Enter") addTask();
+});
+
 uncompletedTaskList.addEventListener("click", deleteTask);
 completedTaskList.addEventListener("click", deleteTask);
+
 uncompletedTaskList.addEventListener("click", () => {
   if (event.target.className === "edit") {
     editTask();
