@@ -184,9 +184,6 @@ const checkDarkView = () => {
       img[i].classList.remove("invert");
     }
   }
-  darkBtn.innerHTML === "Включи ночь"
-    ? (darkBtn.innerHTML = "Включи свет")
-    : (darkBtn.innerHTML = "Включи ночь");
 };
 
 addTaskBtn.addEventListener("click", addTask);
@@ -213,3 +210,9 @@ completedTaskList.addEventListener("click", () => {
 uncompletedTaskList.addEventListener("click", checkBox);
 completedTaskList.addEventListener("click", checkBox);
 darkBtn.addEventListener("click", getDarkTopic);
+
+darkBtn.addEventListener('click', () => {
+  darkBtn.innerHTML === "Включи ночь"
+  ? (darkBtn.innerHTML = "Включи свет")
+  : (darkBtn.innerHTML = "Включи ночь");
+})
