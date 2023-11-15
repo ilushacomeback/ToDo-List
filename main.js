@@ -184,6 +184,9 @@ const checkDarkView = () => {
       img[i].classList.remove("invert");
     }
   }
+  darkBtn.innerHTML === "Включи ночь"
+    ? (darkBtn.innerHTML = "Включи свет")
+    : (darkBtn.innerHTML = "Включи ночь");
 };
 
 addTaskBtn.addEventListener("click", addTask);
