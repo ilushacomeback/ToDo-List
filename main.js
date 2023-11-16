@@ -211,8 +211,8 @@ uncompletedTaskList.addEventListener("click", checkBox);
 completedTaskList.addEventListener("click", checkBox);
 darkBtn.addEventListener("click", getDarkTopic);
 
-darkBtn.addEventListener('click', () => {
+darkBtn.addEventListener("click", () => {
   darkBtn.innerHTML === "Включи ночь"
-  ? (darkBtn.innerHTML = "Включи свет")
-  : (darkBtn.innerHTML = "Включи ночь");
-})
+    ? (darkBtn.innerHTML = "Включи день")
+    : (darkBtn.innerHTML = "Включи ночь");
+});
